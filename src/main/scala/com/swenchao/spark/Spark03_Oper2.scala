@@ -6,9 +6,9 @@ import org.apache.spark.{SparkConf, SparkContext}
 /**
  * @Author: Swenchao
  * @Date: 2020/9/24 下午 08:57
- * @Func: 所有元素乘以2
+ * @Func: 所有元素乘以2（mapPartitions）
  */
-object Spark02_Oper2 {
+object Spark03_Oper2 {
     def main(args: Array[String]): Unit = {
 
         val conf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("WordCount")

@@ -28,5 +28,8 @@ object Spark01_RDD {
 
 //        listRDD.collect().foreach(println)
         value.saveAsTextFile("output")
+
+        // 关闭资源
+        sc.stop()
     }
 }
