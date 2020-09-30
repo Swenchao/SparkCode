@@ -58,3 +58,12 @@ https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/sp
 
 [com.swenchao.spark.Spark11_Oper10](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/Spark11_Oper10.scala)
 
+13. 自定义分区器案例（创建一个List(("a", 1), ("b", 2), ("c", 3))的RDD，使用自定义分区器进行分区）
+
+[com.swenchao.spark.Spark12_Oper11](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/Spark12_Oper11.scala)
+
+14. aggregateByKey案例（创建一个pairRDD，取出每个分区相同key对应值的最大值，然后相加）
+
+[com.swenchao.spark.Spark13_Oper12](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/Spark13_Oper12.scala)
+
+15. 
