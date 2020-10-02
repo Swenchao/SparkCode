@@ -8,8 +8,6 @@
 
 ## 文件说明
 
-https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/Spark02_Oper1
-
 1. WordCount案例
 
 [com.swenchao.spark.WordCount](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/WordCount.scala)
@@ -73,3 +71,7 @@ https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/sp
 16. combineByKey案例（创建一个pairRDD，根据key计算每种key的均值。（先计算每个key出现的次数以及可以对应值的总和，再相除得到结果））
 
 [com.swenchao.spark.Spark15_Oper14](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/Spark15_Oper14.scala)
+
+17. 以上内容综合使用案例（统计出每一个省份广告被点击次数的TOP3）
+
+[com.swenchao.spark.adTop3](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/adTop3.scala)
