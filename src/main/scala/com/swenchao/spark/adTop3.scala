@@ -27,17 +27,32 @@ object adTop3 {
             val details: Array[String] = x.split(" ")
             ((details(1), details(4)), 1)
         })
-
         // 检验样式：((5,10),1)
 //        provinceAD.foreach(println)
 
-        // ((5,10),1)
+        // 点击次数相加
         val sumProvinceAD: RDD[((String, String), Int)] = provinceAD.reduceByKey((x, y) => x + y)
-
 //        sumProvinceAD.foreach(println)
 
-        // 改变样式
+        // 改变样式 (Province,(AD,1))
+        val provinceToADSum: RDD[(String, (String, Int))] = sumProvinceAD.map(x => {
+            (x._1._1, (x._1._2, x._2))
+        })
+//        provinceToADSum.foreach(x=>println(x._1))
 
+        // 根据省份分组
+        val provinceSum: RDD[(String, Iterable[(String, Int)])] = provinceToADSum.groupByKey()
+//        provinceSum.foreach(println)
+
+        // 排序取前三
+        val provinceADTop3: RDD[(String, List[(String, Int)])] = provinceSum.mapValues(x => {
+            x.toList.sortWith((x, y) => x._2 < y._2).take(3)
+        })
+
+        provinceADTop3.foreach(println)
+//        provinceADTop3.saveAsTextFile("output")
+
+        //9.关闭与spark的连接
+        sc.stop()
     }
-
 }
