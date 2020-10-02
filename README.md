@@ -66,4 +66,10 @@ https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/sp
 
 [com.swenchao.spark.Spark13_Oper12](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/Spark13_Oper12.scala)
 
-15. 
+15. foldByKey案例（创建一个pairRDD，计算相同key对应值的相加结果）
+
+[com.swenchao.spark.Spark14_Oper13](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/Spark14_Oper13.scala)
+
+16. combineByKey案例（创建一个pairRDD，根据key计算每种key的均值。（先计算每个key出现的次数以及可以对应值的总和，再相除得到结果））
+
+[com.swenchao.spark.Spark15_Oper14](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/Spark15_Oper14.scala)
