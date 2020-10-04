@@ -75,3 +75,7 @@
 17. 以上内容综合使用案例（统计出每一个省份广告被点击次数的TOP3）
 
 [com.swenchao.spark.adTop3](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/adTop3.scala)
+
+18. JSON文件处理
+
+[com.swenchao.spark.Spark18_Json](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/Spark18_Json.scala)
