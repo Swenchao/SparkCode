@@ -1,4 +1,4 @@
-package com.swenchao.spark
+package com.swenchao.spark.core
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
@@ -6,9 +6,9 @@ import org.apache.spark.{SparkConf, SparkContext}
 /**
  * @Author: Swenchao
  * @Date: 2020/9/24 下午 08:57
- * @Func: sample
+ * @Func: filter
  */
-object Spark09_Oper8 {
+object Spark08_Oper7 {
     def main(args: Array[String]): Unit = {
 
         val conf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("WordCount")
@@ -17,17 +17,12 @@ object Spark09_Oper8 {
         val sc: SparkContext = new SparkContext(conf)
 
         // 生成数据
-        val listRDD: RDD[Int] = sc.makeRDD(1 to 10)
+        val listRDD: RDD[Int] = sc.makeRDD(1 to 4)
 
-        // 从指定数据集合中进行抽样处理，根据不同的算法进行抽样
-
-        // 有放回
-        // val sampleRDD: RDD[Int] = listRDD.sample(false, 0.4, 1)
-
-        // 无放回
-        val sampleRDD: RDD[Int] = listRDD.sample(true, 4, 1)
+        // %2余数为0留下，余数不为0拿走
+        val filterRDD: RDD[Int] = listRDD.filter(x => x % 2 == 0)
 
         // 打印最终结果
-        sampleRDD.collect().foreach(println)
+        filterRDD.collect().foreach(println)
     }
 }

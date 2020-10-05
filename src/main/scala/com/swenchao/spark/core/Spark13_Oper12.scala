@@ -1,14 +1,14 @@
-package com.swenchao.spark
+package com.swenchao.spark.core
 
 import org.apache.spark.rdd.RDD
-import org.apache.spark.{SparkConf, SparkContext}
+import org.apache.spark.{Partitioner, SparkConf, SparkContext}
 
 /**
  * @Author: Swenchao
  * @Date: 2020/9/29 下午 08:57
- * @Func: foldByKey案例
+ * @Func: aggregateByKey案例
  */
-object Spark14_Oper13 {
+object Spark13_Oper12 {
     def main(args: Array[String]): Unit = {
 
         val conf: SparkConf = new SparkConf().setMaster("local[*]").setAppName("WordCount")
@@ -17,7 +17,7 @@ object Spark14_Oper13 {
         val sc: SparkContext = new SparkContext(conf)
 
         // 生成数据
-        val foldRDD: RDD[(Int, Int)] = sc.parallelize(List((1, 3), (1, 2), (1, 4), (2, 3), (3, 6), (3, 8)), 3)
+        val aggRDD: RDD[(String, Int)] = sc.parallelize(List(("a", 3), ("a", 2), ("c", 4), ("b", 3), ("c", 6), ("c", 8)), 2)
 
         // 查看分区
 //        val glomRDD: RDD[Array[(String, Int)]] = aggRDD.glom()
@@ -26,12 +26,8 @@ object Spark14_Oper13 {
 //            => {println(s.mkString(","))}
 //        )
 
-        // 相加(foldByKey案例)
-        val resRDD: RDD[(Int, Int)] = foldRDD.foldByKey(0)(_ + _)
-
-        // combineByKey求和
-//        val resRDD: RDD[(Int, Int)] = foldRDD.combineByKey(x=>x,(x: Int, y: Int) => x + y, (x: Int, y: Int) => x + y)
-
+        // 取出每个分区相同key对应值的最大值，然后相加
+        val resRDD: RDD[(String, Int)] = aggRDD.aggregateByKey(0)(math.max(_, _), _ + _)
         resRDD.collect().foreach(println)
     }
 }

@@ -1,4 +1,4 @@
-package com.swenchao.spark
+package com.swenchao.spark.core
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{SparkConf, SparkContext}
@@ -33,11 +33,6 @@ object Spark16_Serializable {
     }
 }
 
-
-/**
- * 搜索类（需要序列化）
- * @param query
- */
 class Search(query: String) extends java.io.Serializable {
 
     //过滤出包含字符串的数据

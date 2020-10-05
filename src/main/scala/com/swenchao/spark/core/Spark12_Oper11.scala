@@ -1,4 +1,4 @@
-package com.swenchao.spark
+package com.swenchao.spark.core
 
 import org.apache.spark.rdd.RDD
 import org.apache.spark.{Partitioner, SparkConf, SparkContext}
