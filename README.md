@@ -107,3 +107,11 @@
 3. RDD DF DS之间转换
 
 [com.swenchao.spark.sql.SparkSQL03_Transform](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/sql/SparkSQL03_Transform.scala)
+
+4. 用户自定义聚合函数
+
+[com.swenchao.spark.sql.SparkSQL05_UDAF](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/sql/SparkSQL06_UDAF.scala)
+
+5. 改进用户自定义聚合函数
+
+[com.swenchao.spark.sql.SparkSQL06_UDAF_Class](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/sql/SparkSQL06_UDAF_Class.scala)
