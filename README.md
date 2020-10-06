@@ -115,3 +115,25 @@
 5. 改进用户自定义聚合函数
 
 [com.swenchao.spark.sql.SparkSQL06_UDAF_Class](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/sql/SparkSQL06_UDAF_Class.scala)
+
+### SparkStreaming
+
+1. 使用 SparkStreaming 完成 WordCount
+
+[com.swenchao.spark.streaming.SparkStreaming01_WordCount](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/streaming/SparkStreaming01_WordCount.scala)
+
+2. 从文件中获取word进行统计
+
+[com.swenchao.spark.streaming.SparkStreaming02_FileDataSource](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/streaming/SparkStreaming02_FileDataSource.scala)
+
+3. 自定义采集器
+
+[com.swenchao.spark.streaming.SparkStreaming03_MyReceiver](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/streaming/SparkStreaming03_MyReceiver.scala)
+
+4. 有状态数据统计
+
+[com.swenchao.spark.streaming.SparkStreaming04_UpdateState.scala](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/streaming/SparkStreaming04_UpdateState.scala)
+
+5. scala窗口操作
+
+[com.swenchao.spark.streaming.SparkStreaming05_Window](https://github.com/Swenchao/SparkCode/blob/master/src/main/scala/com/swenchao/spark/streaming/SparkStreaming05_Window.scala)
